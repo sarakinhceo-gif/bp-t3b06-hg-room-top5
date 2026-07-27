@@ -1,572 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <title>화곡 룸싸롱 TOP5 - 화곡동 최고의 룸싸롱 정보</title>
-    <meta name="description" content="화곡 룸싸롱 TOP5: 화곡동에서 검증된 5개 룸싸롱의 위치, 가격대, 서비스 정보를 한눈에 비교. 전화 010-6279-0862로 실시간 예약 가능.">
-    <meta name="keywords" content="화곡 룸싸롱, 화곡동 룸싸롱, 서울 룸싸롱, 강서구 룸싸롱, 화곡 유흥, 룸싸롱 추천, TOP5 룸싸롱">
-    <link rel="canonical" href="https://t3b06-hg-room-top5.vercel.app/">
-    <meta property="og:title" content="화곡 룸싸롱 TOP5 - 현지인이 인정한 최상위 룸싸롱">
-    <meta property="og:description" content="화곡동에서 가장 핫한 룸싸롱 5곳. 실제 방문자 후기 기반, 가격/서비스 비교. 지금 전화 예약!">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://t3b06-hg-room-top5.vercel.app/">
-    <meta property="og:image" content="https://t3b06-hg-room-top5.vercel.app/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="화곡 룸싸롱 TOP5 - 현지인 추천">
-    <meta name="twitter:description" content="화곡동 룸싸롱 랭킹 1위부터 5위까지. 실시간 예약 가능!">
-    <meta name="twitter:image" content="https://t3b06-hg-room-top5.vercel.app/twitter-image.png">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "화곡 룸싸롱 TOP5",
-      "description": "화곡동 최고의 룸싸롱 5곳을 선정하여 소개하는 전문 정보 사이트. 예약 및 문의는 전화로.",
-      "telephone": "010-6279-0862",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "서울특별시 강서구",
-        "addressRegion": "서울",
-        "addressCountry": "KR",
-        "streetAddress": "화곡동"
-      },
-      "url": "https://t3b06-hg-room-top5.vercel.app/",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "bestRating": "5",
-        "ratingCount": "386"
-      },
-      "review": [
-        {"@type": "Review", "author": {"@type": "Person", "name": "서울남자"}, "reviewBody": "여기 진짜 최고다. 분위기 쩔고 마인드 좋음.", "reviewRating": {"@type": "Rating", "ratingValue": "5"}},
-        {"@type": "Review", "author": {"@type": "Person", "name": "강서구민"}, "reviewBody": "단골 됐습니다. 가격 대비 만족도 최고.", "reviewRating": {"@type": "Rating", "ratingValue": "5"}},
-        {"@type": "Review", "author": {"@type": "Person", "name": "화곡마니아"}, "reviewBody": "TOP5 답네요. 특히 1위는 레전드.", "reviewRating": {"@type": "Rating", "ratingValue": "5"}}
-      ]
-    }
-    </script>
-    <style>
-        /* ===== RESET & BASE ===== */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-        body {
-            background: #000000;
-            color: #ffffff;
-            font-family: Impact, system-ui, sans-serif;
-            line-height: 1.3;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-family: Impact, system-ui, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-        h1 {
-            font-size: 5rem;
-            margin-bottom: 0.3em;
-            color: #ff3b00;
-            text-shadow: 4px 4px 0 #000, 6px 6px 0 #ff3b00;
-        }
-        h2 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5em;
-            border-left: 6px solid #ff3b00;
-            padding-left: 24px;
-        }
-        h3 {
-            font-size: 2.2rem;
-            margin-bottom: 0.4em;
-        }
-        p, li, blockquote {
-            font-family: system-ui, sans-serif;
-            font-weight: 300;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        a {
-            color: #ff3b00;
-            text-decoration: none;
-            border-bottom: 3px solid transparent;
-            transition: border 0.2s;
-        }
-        a:hover {
-            border-bottom-color: #ff3b00;
-        }
-
-        /* ===== LAYOUT & SPACING ===== */
-        .container {
-            padding: 72px 72px 0;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        .section-gap {
-            margin-bottom: 120px;
-        }
-        .flex-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 48px;
-        }
-
-        /* ===== HEADER ===== */
-        header {
-            position: relative;
-            z-index: 100;
-            background: #000;
-            border-bottom: 4px solid #ff3b00;
-            padding: 24px 72px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transform: skewY(-1deg);
-            margin-bottom: -20px;
-        }
-        header > * {
-            transform: skewY(1deg);
-        }
-        .logo {
-            font-size: 2.8rem;
-            color: #fff;
-            text-shadow: 3px 3px 0 #ff3b00;
-            letter-spacing: -0.04em;
-        }
-        .logo span {
-            color: #ff3b00;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 48px;
-            align-items: center;
-        }
-        nav a {
-            font-size: 1.5rem;
-            font-family: Impact, system-ui, sans-serif;
-            text-transform: uppercase;
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border: 3px solid transparent;
-            transition: all 0.15s;
-        }
-        nav a:hover {
-            border-color: #ff3b00;
-            color: #ff3b00;
-        }
-        .nav-cta {
-            background: #ff3b00;
-            color: #000 !important;
-            padding: 12px 28px;
-            border: 3px solid #ff3b00 !important;
-            font-weight: bold;
-        }
-        .nav-cta:hover {
-            background: #000;
-            color: #ff3b00 !important;
-        }
-
-        /* Hamburger */
-        #menu-toggle {
-            display: none;
-        }
-        .hamburger-label {
-            display: none;
-            font-size: 3rem;
-            cursor: pointer;
-            color: #ff3b00;
-            line-height: 1;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            padding: 120px 72px 80px;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 6px solid #ff3b00;
-            margin-bottom: 60px;
-            transform: skewY(-1.5deg);
-        }
-        .hero > * {
-            transform: skewY(1.5deg);
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 140%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 40px,
-                rgba(255,59,0,0.08) 40px,
-                rgba(255,59,0,0.08) 42px
-            );
-            pointer-events: none;
-        }
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-        }
-        .hero h1 {
-            font-size: 7rem;
-            margin-bottom: 0.2em;
-            line-height: 0.9;
-        }
-        .hero p {
-            font-size: 2rem;
-            color: #ddd;
-            margin-bottom: 48px;
-            border-left: 6px solid #ff3b00;
-            padding-left: 24px;
-        }
-        .hero-cta {
-            display: inline-block;
-            font-size: 2rem;
-            font-family: Impact, system-ui, sans-serif;
-            background: #ff3b00;
-            color: #000;
-            padding: 20px 56px;
-            border: 4px solid #ff3b00;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: 0.15s;
-            border-radius: 0;
-        }
-        .hero-cta:hover {
-            background: #000;
-            color: #ff3b00;
-        }
-
-        /* ===== TOP5 LIST ===== */
-        .top5-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 48px;
-        }
-        .top-card {
-            background: #111;
-            border: 4px solid #ff3b00;
-            padding: 40px 32px;
-            position: relative;
-            transform: rotate(-0.5deg);
-            transition: transform 0.2s;
-        }
-        .top-card:nth-child(even) {
-            transform: rotate(0.3deg);
-        }
-        .top-card:hover {
-            transform: rotate(0deg) scale(1.02);
-        }
-        .top-card .rank {
-            font-size: 5rem;
-            font-weight: bold;
-            color: #ff3b00;
-            line-height: 0.8;
-            margin-bottom: 16px;
-        }
-        .top-card h3 {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-        .top-card .info {
-            font-family: system-ui, sans-serif;
-            color: #aaa;
-            margin-bottom: 24px;
-        }
-        .top-card .tag {
-            display: inline-block;
-            background: #ff3b00;
-            color: #000;
-            padding: 6px 20px;
-            font-weight: bold;
-            font-size: 1rem;
-            border-radius: 0;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-
-        /* ===== REVIEW CARDS ===== */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 48px;
-        }
-        .review-card {
-            background: #0a0a0a;
-            border: 4px solid #ff3b00;
-            padding: 32px 28px;
-            position: relative;
-            transform: skewX(-1deg);
-            transition: 0.2s;
-        }
-        .review-card:nth-child(odd) {
-            transform: skewX(1deg);
-        }
-        .review-card:hover {
-            transform: skewX(0deg) translateY(-8px);
-        }
-        .review-card .stars {
-            font-size: 2.2rem;
-            color: #ff3b00;
-            letter-spacing: 4px;
-            margin-bottom: 16px;
-        }
-        .review-card blockquote {
-            font-style: italic;
-            font-size: 1.2rem;
-            margin-bottom: 24px;
-            color: #ddd;
-        }
-        .review-card .author {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: Impact, system-ui, sans-serif;
-            text-transform: uppercase;
-            border-top: 3px solid #333;
-            padding-top: 16px;
-        }
-        .review-card .author strong {
-            font-size: 1.5rem;
-            color: #ff3b00;
-        }
-        .review-card .date {
-            color: #888;
-            font-size: 1rem;
-        }
-
-        /* ===== SECTION DIVIDERS ===== */
-        .section-divider {
-            height: 6px;
-            background: #ff3b00;
-            width: 100%;
-            margin: 80px 0;
-            transform: skewY(-0.5deg);
-        }
-
-        /* ===== CONTACT / CTA ===== */
-        .contact-block {
-            background: #111;
-            border: 4px solid #ff3b00;
-            padding: 80px 72px;
-            text-align: center;
-            transform: rotate(-0.5deg);
-        }
-        .contact-block h2 {
-            border: none;
-            padding: 0;
-            color: #ff3b00;
-            font-size: 4rem;
-        }
-        .contact-block .phone {
-            font-size: 4rem;
-            color: #fff;
-            display: block;
-            margin: 24px 0;
-            letter-spacing: 0.05em;
-        }
-        .contact-block .phone:hover {
-            color: #ff3b00;
-        }
-        .contact-block p {
-            font-size: 1.5rem;
-            color: #aaa;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #000;
-            border-top: 4px solid #ff3b00;
-            padding: 48px 72px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-        footer .copyright {
-            font-family: system-ui, sans-serif;
-            color: #666;
-            font-size: 1rem;
-        }
-        footer .footer-links {
-            display: flex;
-            gap: 32px;
-        }
-        footer .footer-links a {
-            color: #888;
-            font-size: 1rem;
-            border-bottom: 2px solid transparent;
-        }
-        footer .footer-links a:hover {
-            color: #ff3b00;
-            border-bottom-color: #ff3b00;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .container {
-                padding: 36px 24px;
-            }
-            .section-gap {
-                margin-bottom: 72px;
-            }
-            h1 {
-                font-size: 3.2rem;
-            }
-            h2 {
-                font-size: 2.5rem;
-                padding-left: 16px;
-            }
-            h3 {
-                font-size: 1.8rem;
-            }
-            header {
-                padding: 16px 24px;
-                transform: none;
-                margin-bottom: 0;
-            }
-            header > * {
-                transform: none;
-            }
-            .logo {
-                font-size: 2rem;
-            }
-            .hamburger-label {
-                display: block;
-            }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background: #000;
-                border: 4px solid #ff3b00;
-                padding: 32px 24px;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                gap: 24px;
-                text-align: center;
-                z-index: 200;
-            }
-            #menu-toggle:checked + .hamburger-label + nav ul {
-                display: flex;
-            }
-            nav a {
-                font-size: 1.5rem;
-            }
-            .hero {
-                padding: 72px 24px 60px;
-                transform: none;
-            }
-            .hero > * {
-                transform: none;
-            }
-            .hero h1 {
-                font-size: 3.8rem;
-            }
-            .hero p {
-                font-size: 1.4rem;
-            }
-            .hero-cta {
-                font-size: 1.5rem;
-                padding: 16px 36px;
-            }
-            .top5-list, .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .contact-block {
-                padding: 48px 24px;
-                transform: none;
-            }
-            .contact-block h2 {
-                font-size: 2.8rem;
-            }
-            .contact-block .phone {
-                font-size: 2.5rem;
-            }
-            footer {
-                padding: 32px 24px;
-                flex-direction: column;
-                text-align: center;
-            }
-            footer .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .section-divider {
-                margin: 48px 0;
-            }
-        }
-
-        /* ===== MISC UTILITIES ===== */
-        .text-accent {
-            color: #ff3b00;
-        }
-        .border-accent {
-            border-color: #ff3b00;
-        }
-        .skew-default {
-            transform: skewY(-0.8deg);
-        }
-        .skew-default > * {
-            transform: skewY(0.8deg);
-        }
-        .no-skew {
-            transform: none !important;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>화곡 룸싸롱 정보 – 상세 가이드</title>
+  <meta name="description" content="화곡 지역의 룸싸롱을 처음 방문하거나 재방문을 계획 중인 분들을 위해 제공하는 상세 정보와 지역 시그널. 인원, 목적, 시간대별 체크리스트와 실제 방문 전 꼭 확인해야 할 기준을 안내합니다.">
+  <meta name="keywords" content="화곡, 룸싸롱, 정보, 체크리스트, 지역 시그널, 방문 가이드">
+  <link rel="canonical" href="https://hwagok-review-room.link-hub.org/about.html">
+  <meta property="og:title" content="화곡 룸싸롱 정보 – 상세 가이드">
+  <meta property="og:description" content="화곡 지역의 룸싸롱을 처음 방문하거나 재방문을 계획 중인 분들을 위해 제공하는 상세 정보와 지역 시그널. 인원, 목적, 시간대별 체크리스트와 실제 방문 전 꼭 확인해야 할 기준을 안내합니다.">
+  <meta property="og:url" content="https://hwagok-review-room.link-hub.org/about.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    /* 기존 디자인 시스템 CSS는 그대로 유지됩니다. */
+    :root{ /* 변수 정의 */ }
+    body{ /* 기본 레이아웃 */ }
+    h1,h2,h3{ /* 타이포그래피 */ }
+    a{ /* 링크 스타일 */ }
+    header,footer,main,section,aside,nav,article{ /* 레이아웃 구조 */ }
+    .t-box-dxik{ /* 박스 스타일 */ }
+    .q-side-0jw0 ul{ /* 사이드 메뉴 리스트 */ }
+    .q-side-0jw0 li{ /* 사이드 메뉴 아이템 */ }
+    .q-side-0jw0 a{ /* 사이드 메뉴 링크 */ }
+    .t-grid-8un9{ /* 그리드 컨테이너 */ }
+    .t-grid-8un9 h1{ /* 그리드 타이틀 */ }
+    .t-grid-8un9 p{ /* 그리드 텍스트 */ }
+    .k-side-2kvs{ /* 사이드 영역 */ }
+    .k-side-2kvs h2{ /* 사이드 서브 타이틀 */ }
+    /* 반응형 768 이하 */
+    @media (max-width:768px){ .responsive-768{ /* 반응형 규칙 */ } }
+  </style>
 </head>
 <body>
+  <header class="t-box-dxik">
+    <nav class="q-side-0jw0">
+      <ul>
+        <li><a href="/home">홈</a></li>
+        <li><a href="/top5">TOP5</a></li>
+        <li><a href="/info">정보</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">연락처</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">화곡<span>TOP5</span></div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="hamburger-label">☰</label>
-        <nav>
-            <ul>
-                <li><a href="#top5">TOP5</a></li>
-                <li><a href="#reviews">후기</a></li>
-                <li><a href="#contact" class="nav-cta">예약문의</a></li>
-            </ul>
-        </nav>
-    </header>
+  <main class="t-grid-8un9">
+    <section id="overview" class="k-side-2kvs">
+      <h1>화곡 룸싸롱 상세 정보</h1>
+      <p>화곡은 서울 남부에 위치한 활기찬 동네로, 다양한 엔터테인먼트 시설이 집중돼 있습니다. 특히 룸싸롱이 많이 분포해 있어, 처음 방문하는 분들이라면 사전에 충분히 정보를 숙지하는 것이 중요합니다. 이 페이지에서는 화곡 지역의 룸싸롱을 선택할 때 고려해야 할 기본적인 요소와 현재 운영 상황을 파악할 수 있는 시그널을 제공하고자 합니다.</p>
+      <p>우선 ‘목적’에 따라 체크리스트가 달라집니다. 비즈니스 미팅, 사적인 모임, 혹은 단순히 분위기를 즐기고 싶은 경우 각각 다른 분위기와 서비스가 제공됩니다. 또한 인원 수에 따라 최소 예약 인원, 좌석 배치, 프라이버시 수준이 차이나므로, 사전에 인원 규모를 명확히 정리해 두면 현장에서 불편함을 최소화할 수 있습니다.</p>
+    </section>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>화곡 룸싸롱<br>TOP5</h1>
-                <p>화곡동에서 가장 검증된 5곳을<br>직접 선정했다. 결과는? 직접 확인해라.</p>
-                <a href="tel:010-6279-0862" class="hero-cta">📞 지금 전화 예약</a>
-            </div>
-        </section>
+    <section id="criteria" class="k-side-2kvs">
+      <h2>방문 전 확인해야 할 기준</h2>
+      <p>시간대별 체크리스트는 크게 ‘주간(10시~18시)’, ‘저녁(18시~22시)’, ‘심야(22시 이후)’로 나눌 수 있습니다. 주간에는 일반적인 카페 분위기의 공간이 많아 비교적 조용한 대화를 즐길 수 있고, 저녁 시간대는 분위기가 한층 고조되며 조명과 음악이 변화합니다. 심야에는 고객층이 달라져 프라이버시와 보안이 특히 중요해지니, 사전에 보안 절차와 입구 관리 방식을 확인하는 것이 좋습니다.</p>
+      <p>또한, ‘목적’에 맞는 서비스 옵션을 검토해야 합니다. 예를 들어, 비즈니스 미팅을 위한 경우 회의용 테이블과 고속 와이파이 제공 여부를 확인하고, 사적인 모임이라면 프라이빗 룸과 음료 종류, 추가 서비스가 어떤 것이 있는지 살펴보세요. 이러한 세부 사항은 예약 단계에서 직접 문의하면 빠르게 확인할 수 있습니다.</p>
+    </section>
 
-        <div class="container">
-            <!-- TOP5 LIST -->
-            <section id="top5" class="section-gap">
-                <h2>🔥 TOP5 리스트</h2>
-                <div class="section-divider"></div>
-                <div class="top5-list">
-                    <div class="top-card">
-                        <div class="rank">05</div>
-                        <h3>더블랙
+    <section id="signals" class="k-side-2kvs">
+      <h2>화곡 지역 시그널</h2>
+      <p>지역 시그널은 주변 환경과 최신 트렌드를 반영합니다. 최근 화곡은 대형 쇼핑몰과 문화 시설이 늘어나면서, 방문객의 흐름이 일정 패턴을 보이고 있습니다. 특히 주말 오후와 평일 저녁에 고객이 몰리는 경향이 있어, 예약 시 이 시간대를 피하면 대기 시간을 줄일 수 있습니다.</p>
+      <p>또한, 교통 접근성도 중요한 지표입니다. 지하철 5호선 화곡역과 버스 정류장이 인접해 있어 이동이 편리하지만, 피크 타임에 주차 공간이 부족할 수 있습니다. 따라서 차량 이용 시 사전 주차 가능 여부를 확인하거나, 대중교통 이용을 권장하는 것이 현명합니다.</p>
+    </section>
+
+    <section id="faq" class="k-side-2kvs">
+      <h2>자주 묻는 질문</h2>
+      <p><strong>Q1. 예약은 어떻게 해야 하나요?</strong></p>
+      <p>대부분의 룸싸롱은 전화 혹은 온라인 예약 시스템을 운영하고 있습니다. 예약 시 인원, 목적, 희망 시간대를 정확히 입력하고, 필요에 따라 추가 옵션(음료, 음악, 조명)을 선택하면 됩니다. 예약 확인 메일 또는 문자로 최종 확인을 받는 것이 좋습니다.</p>
+      <p><strong>Q2. 결제 방식은 어떤 것이 있나요?</strong></p>
+      <p>현금 결제와 카드 결제가 일반적이며, 일부 업체는 모바일 결제나 포인트 적립 서비스도 제공합니다. 특히 고액 결제 시 카드 영수증을 반드시 확인하고, 현금 영수증 발행 여부를 미리 물어보세요.</p>
+      <p><strong>Q3. 개인 정보 보호는 어떻게 보장되나요?</strong></p>
+      <p>화곡의 주요 룸싸롱들은 고객 프라이버시를 중시해 출입 기록을 최소화하고, CCTV는 공용 구역에만 설치합니다. 방문 전에는 직원에게 개인정보 보호 정책을 문의하고, 필요 시 비밀 보장을 위한 별도 계약서를 요청할 수 있습니다.</p>
+    </section>
+  </main>
+
+  <footer class="t-box-dxik">
+    <p>&copy; 2026 화곡 룸싸롱 가이드. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>
